@@ -1,0 +1,40 @@
+<div class="heading col-xs-12 col-md-12 col-lg-12 my-4">
+  <h3 class="mx-4">Dashboard</h3>
+  <div class="d-flex flex-row mx-4">
+    <select
+      wgt-select
+      id="teamSelect"
+      #teamSelect
+      class="col-xs-12 col-md-3 col-lg-3 me-3"
+    >
+      <option *ngFor="let team of teams" value="{{ team.id }}">
+        <span>{{ team.abbreviation }} - {{ team.full_name }}</span>
+      </option>
+    </select>
+    <button class="btn btn-primary" id="trackBtn" (click)="trackTeam()">
+      {{ constants.labels.trackTeam }}
+    </button>
+  </div>
+  <div>
+    <p *ngIf="alreadyTracked">{{ constants.labels.teamAlreadyTracked }}</p>
+  </div>
+</div>
+
+<div
+  class="
+    content
+    col-xs-12 col-md-12 col-lg-12
+    my-4
+    mx-4
+    d-flex
+    flex-row flex-wrap
+  "
+>
+  <app-team-card
+    class="mx-4 my-2"
+    *ngFor="let team of trackedTeams"
+    [team]="team"
+    (emitter)="removeCard($event)"
+    [pastDays]="pastDaysArray"
+  ></app-team-card>
+</div>

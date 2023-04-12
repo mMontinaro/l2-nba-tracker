@@ -1,0 +1,20 @@
+.resultCircle {
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px;
+  border: 2px solid #666;
+  color: #fff;
+  text-align: center;
+}
+.resultCircle.W {
+  border: 2px solid #006900;
+  background: #006900;
+}
+.resultCircle.L {
+  border: 2px solid #ff1502;
+  background: #ff1502;
+}
+span {
+  font-weight: bold;
+}

@@ -1,0 +1,6 @@
+<p *ngIf="isShown">{{ constants.labels.pastScores }}</p>
+<p *ngIf="!isShown">{{ constants.labels.noPlayedGames }}</p>
+<div *ngFor="let game of results">
+  <span>{{ game.homeTeam.abbreviation }}</span> {{ game.homeScore }} -
+  {{ game.visitorScore }} <span>{{ game.visitorTeam.abbreviation }}</span>
+</div>

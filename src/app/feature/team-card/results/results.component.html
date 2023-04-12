@@ -1,0 +1,15 @@
+<p *ngIf="isShown">{{ constants.labels.pastResults }}</p>
+<p *ngIf="!isShown">{{ constants.labels.noPlayedGames }}</p>
+<div class="win-loss d-flex flex-row my-2">
+  <div *ngFor="let result of winLoss" class="resultCircle {{ result }} me-2">
+    {{ result }}
+  </div>
+</div>
+<div *ngIf="isShown" class="paragraph">
+  <p>
+    {{ constants.labels.avgPointsScored }}<span>{{ avgScored }}</span>
+  </p>
+  <p>
+    {{ constants.labels.avgPointsConceded }}<span>{{ avgConceded }}</span>
+  </p>
+</div>
